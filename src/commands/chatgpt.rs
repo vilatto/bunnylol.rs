@@ -7,8 +7,13 @@ pub struct ChatGPTCommand;
 impl BunnylolCommand for ChatGPTCommand {
     const BINDINGS: &'static [&'static str] = &["chatgpt"];
 
-    fn process_args(_args: &str) -> String {
-        "https://chatgpt.com".to_string()
+    fn process_args(args: &str) -> String {
+        let query = Self::get_command_args(args);
+        if query.is_empty() {
+            "https://chatgpt.com".to_string()
+        } else {
+            format!("https://chatgpt.com/?prompt={}", query)
+        }
     }
 
     fn get_info() -> CommandInfo {
