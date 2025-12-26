@@ -52,7 +52,9 @@ impl BunnylolCommandRegistry {
         use crate::commands::*;
 
         match command {
-            cmd if BindingsCommand::matches_command(cmd) => { BindingsCommand::process_args(full_args) }
+            cmd if BindingsCommand::matches_command(cmd) => {
+                BindingsCommand::process_args(full_args)
+            }
             cmd if GitHubCommand::matches_command(cmd) => GitHubCommand::process_args(full_args),
             cmd if TwitterCommand::matches_command(cmd) => TwitterCommand::process_args(full_args),
             cmd if RedditCommand::matches_command(cmd) => RedditCommand::process_args(full_args),
@@ -61,22 +63,37 @@ impl BunnylolCommandRegistry {
                 DevBunnyCommand::process_args(full_args)
             }
             cmd if REICommand::matches_command(cmd) => REICommand::process_args(full_args),
-            cmd if InstagramCommand::matches_command(cmd) => InstagramCommand::process_args(full_args),
-            cmd if FacebookCommand::matches_command(cmd) => FacebookCommand::process_args(full_args),
+            cmd if InstagramCommand::matches_command(cmd) => {
+                InstagramCommand::process_args(full_args)
+            }
+            cmd if FacebookCommand::matches_command(cmd) => {
+                FacebookCommand::process_args(full_args)
+            }
             cmd if ThreadsCommand::matches_command(cmd) => ThreadsCommand::process_args(full_args),
-            cmd if WhatsAppCommand::matches_command(cmd) => WhatsAppCommand::process_args(full_args),
+            cmd if WhatsAppCommand::matches_command(cmd) => {
+                WhatsAppCommand::process_args(full_args)
+            }
             cmd if MetaCommand::matches_command(cmd) => MetaCommand::process_args(full_args),
             cmd if CargoCommand::matches_command(cmd) => CargoCommand::process_args(full_args),
             cmd if NpmCommand::matches_command(cmd) => NpmCommand::process_args(full_args),
             cmd if ClaudeCommand::matches_command(cmd) => ClaudeCommand::process_args(full_args),
             cmd if ChatGPTCommand::matches_command(cmd) => ChatGPTCommand::process_args(full_args),
+            cmd if TodoCommand::matches_command(cmd) => TodoCommand::process_args(full_args),
             cmd if RustCommand::matches_command(cmd) => RustCommand::process_args(full_args),
             cmd if HackCommand::matches_command(cmd) => HackCommand::process_args(full_args),
             cmd if AmazonCommand::matches_command(cmd) => AmazonCommand::process_args(full_args),
-            cmd if GoogleDocsCommand::matches_command(cmd) => GoogleDocsCommand::process_args(full_args),
-            cmd if GoogleSheetsCommand::matches_command(cmd) => GoogleSheetsCommand::process_args(full_args),
-            cmd if GoogleSlidesCommand::matches_command(cmd) => GoogleSlidesCommand::process_args(full_args),
-            cmd if GoogleChatCommand::matches_command(cmd) => GoogleChatCommand::process_args(full_args),
+            cmd if GoogleDocsCommand::matches_command(cmd) => {
+                GoogleDocsCommand::process_args(full_args)
+            }
+            cmd if GoogleSheetsCommand::matches_command(cmd) => {
+                GoogleSheetsCommand::process_args(full_args)
+            }
+            cmd if GoogleSlidesCommand::matches_command(cmd) => {
+                GoogleSlidesCommand::process_args(full_args)
+            }
+            cmd if GoogleChatCommand::matches_command(cmd) => {
+                GoogleChatCommand::process_args(full_args)
+            }
             _ => GoogleSearchCommand::process_args(full_args),
         }
     }
@@ -102,6 +119,7 @@ impl BunnylolCommandRegistry {
             NpmCommand::get_info(),
             ClaudeCommand::get_info(),
             ChatGPTCommand::get_info(),
+            TodoCommand::get_info(),
             RustCommand::get_info(),
             HackCommand::get_info(),
             AmazonCommand::get_info(),

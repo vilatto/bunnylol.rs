@@ -24,6 +24,7 @@ pub mod reddit;
 pub mod rei;
 pub mod rust;
 pub mod threads;
+pub mod todo;
 pub mod twitter;
 pub mod whatsapp;
 
@@ -50,5 +51,6 @@ pub use reddit::RedditCommand;
 pub use rei::REICommand;
 pub use rust::RustCommand;
 pub use threads::ThreadsCommand;
+pub use todo::TodoCommand;
 pub use twitter::TwitterCommand;
 pub use whatsapp::WhatsAppCommand;
