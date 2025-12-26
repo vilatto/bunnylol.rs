@@ -3,7 +3,7 @@ use crate::utils::bunnylol_command::{BunnylolCommand, CommandInfo};
 
 pub struct TodoCommand;
 
-const BASE_URL: &str = "http://localhost:5173";
+const BASE_URL: &str = "http://todo.lxwhomelab.cc";
 
 impl BunnylolCommand for TodoCommand {
     const BINDINGS: &'static [&'static str] = &["todo"];
