@@ -1,9 +1,10 @@
 /// todo command handler
 use crate::utils::bunnylol_command::{BunnylolCommand, CommandInfo};
+use crate::utils::url_encoding::build_search_url;
 
 pub struct TodoCommand;
 
-const BASE_URL: &str = "http://todo.lxwhomelab.cc";
+const BASE_URL: &str = "https://todo.lxwhomelab.cc";
 
 impl BunnylolCommand for TodoCommand {
     const BINDINGS: &'static [&'static str] = &["todo"];
@@ -13,7 +14,8 @@ impl BunnylolCommand for TodoCommand {
         if query.is_empty() {
             base_url.to_string()
         } else {
-            format!("{}/?add={}", base_url, query)
+            //format!("{}/?add={}", base_url, query)
+            build_search_url(base_url, "add", query)
         }
     }
 
