@@ -41,7 +41,7 @@ mod tests {
     fn test_todo_command_with_args() {
         assert_eq!(
             TodoCommand::process_args("todo some args"),
-            format!("{}/?add=some args", BASE_URL)
+            format!("{}?add=some%20args", BASE_URL)
         );
     }
 }
