@@ -78,6 +78,9 @@ impl BunnylolCommandRegistry {
             cmd if NpmCommand::matches_command(cmd) => NpmCommand::process_args(full_args),
             cmd if ClaudeCommand::matches_command(cmd) => ClaudeCommand::process_args(full_args),
             cmd if ChatGPTCommand::matches_command(cmd) => ChatGPTCommand::process_args(full_args),
+            cmd if PerplexityCommand::matches_command(cmd) => {
+                PerplexityCommand::process_args(full_args)
+            }
             cmd if TodoCommand::matches_command(cmd) => TodoCommand::process_args(full_args),
             cmd if RustCommand::matches_command(cmd) => RustCommand::process_args(full_args),
             cmd if HackCommand::matches_command(cmd) => HackCommand::process_args(full_args),
@@ -119,6 +122,7 @@ impl BunnylolCommandRegistry {
             NpmCommand::get_info(),
             ClaudeCommand::get_info(),
             ChatGPTCommand::get_info(),
+            PerplexityCommand::get_info(),
             TodoCommand::get_info(),
             RustCommand::get_info(),
             HackCommand::get_info(),
