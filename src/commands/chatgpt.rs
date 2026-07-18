@@ -1,6 +1,7 @@
 /// ChatGPT command handler
 /// Supports: chatgpt -> redirects to chatgpt.com
 use crate::utils::bunnylol_command::{BunnylolCommand, CommandInfo};
+use crate::utils::url_encoding::build_search_url;
 
 pub struct ChatGPTCommand;
 
@@ -12,7 +13,7 @@ impl BunnylolCommand for ChatGPTCommand {
         if query.is_empty() {
             "https://chatgpt.com".to_string()
         } else {
-            format!("https://chatgpt.com/?prompt={}", query)
+            build_search_url("https://chatgpt.com", "q", query)
         }
     }
 
@@ -41,7 +42,7 @@ mod tests {
     fn test_chatgpt_command_with_args() {
         assert_eq!(
             ChatGPTCommand::process_args("chatgpt some args"),
-            "https://chatgpt.com"
+            "https://chatgpt.com?q=some%20args"
         );
     }
 }
