@@ -55,10 +55,7 @@ mod tests {
 
     #[test]
     fn test_meta_command_ai() {
-        assert_eq!(
-            MetaCommand::process_args("meta ai"),
-            "https://www.meta.ai"
-        );
+        assert_eq!(MetaCommand::process_args("meta ai"), "https://www.meta.ai");
     }
 
     #[test]

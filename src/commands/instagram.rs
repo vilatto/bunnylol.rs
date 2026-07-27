@@ -11,7 +11,11 @@ impl InstagramCommand {
     }
 
     fn construct_search_url(query: &str) -> String {
-        build_search_url("https://www.instagram.com/explore/search/keyword", "q", query)
+        build_search_url(
+            "https://www.instagram.com/explore/search/keyword",
+            "q",
+            query,
+        )
     }
 }
 

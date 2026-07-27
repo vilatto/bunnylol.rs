@@ -37,10 +37,7 @@ mod tests {
         assert_eq!(AmazonCommand::process_args("az"), "https://amazon.com/");
         assert_eq!(AmazonCommand::process_args("amzn"), "https://amazon.com/");
         assert_eq!(AmazonCommand::process_args("azn"), "https://amazon.com/");
-        assert_eq!(
-            AmazonCommand::process_args("amazon"),
-            "https://amazon.com/"
-        );
+        assert_eq!(AmazonCommand::process_args("amazon"), "https://amazon.com/");
     }
 
     #[test]

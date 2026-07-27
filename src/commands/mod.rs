@@ -28,6 +28,7 @@ pub mod threads;
 pub mod todo;
 pub mod twitter;
 pub mod whatsapp;
+pub mod youtube;
 
 // Re-export the command structs for convenience
 pub use amazon::AmazonCommand;
@@ -56,3 +57,4 @@ pub use threads::ThreadsCommand;
 pub use todo::TodoCommand;
 pub use twitter::TwitterCommand;
 pub use whatsapp::WhatsAppCommand;
+pub use youtube::YouTubeCommand;
