@@ -3,7 +3,14 @@
     "allow": [
       "Bash(docker inspect:*)",
       "Bash(docker-compose build:*)",
-      "Bash(docker run:*)"
+      "Bash(docker run:*)",
+      "Bash(cargo build *)",
+      "Bash(curl *)",
+      "Bash(cargo test *)",
+      "Bash(cargo fmt *)",
+      "Bash(cargo clippy *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ],
     "deny": [],
     "ask": []
