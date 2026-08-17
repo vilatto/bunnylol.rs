@@ -98,6 +98,7 @@ impl BunnylolCommandRegistry {
                 GoogleChatCommand::process_args(full_args)
             }
             cmd if YouTubeCommand::matches_command(cmd) => YouTubeCommand::process_args(full_args),
+            cmd if MapCommand::matches_command(cmd) => MapCommand::process_args(full_args),
             _ => GoogleSearchCommand::process_args(full_args),
         }
     }
@@ -133,6 +134,7 @@ impl BunnylolCommandRegistry {
             GoogleSlidesCommand::get_info(),
             GoogleChatCommand::get_info(),
             YouTubeCommand::get_info(),
+            MapCommand::get_info(),
             GoogleSearchCommand::get_info(),
         ]
     }
